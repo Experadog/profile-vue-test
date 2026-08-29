@@ -1,1 +1,39 @@
 @import './reset.css';
+
+/* Design tokens for light/dark theme. `useTheme()` (shared/composables)
+   stamps `data-theme` on <html> at startup and on every toggle; every color
+   used across shared/ui and the app shell reads from these variables so the
+   switch is instant with no per-component theme logic. */
+:root {
+  --color-bg: #ffffff;
+  --color-surface: #f4f5f7;
+  --color-text: #1a1a1a;
+  --color-text-muted: #5f6672;
+  --color-border: #d7dae0;
+  --color-accent: #2563eb;
+  --color-danger: #dc2626;
+}
+
+:root[data-theme='dark'] {
+  --color-bg: #14161c;
+  --color-surface: #1e212a;
+  --color-text: #f2f3f5;
+  --color-text-muted: #a2a8b4;
+  --color-border: #343946;
+  --color-accent: #60a5fa;
+  --color-danger: #f87171;
+}
+
+/* `margin: 0` already comes from reset.css — only theme-related properties here. */
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    sans-serif;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}

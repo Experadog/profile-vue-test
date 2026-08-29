@@ -42,6 +42,11 @@ const model = defineModel<string>({ default: '' })
 
 .base-input__control {
   width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background: var(--color-bg);
+  color: var(--color-text);
+  padding: 0.5em 0.6em;
 }
 
 .base-input__control:disabled {

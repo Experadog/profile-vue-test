@@ -1,0 +1,37 @@
+// Minimal common namespace only — real translations are added when
+// localization is implemented (Milestone: Localization).
+export default {
+  common: {
+    appName: 'GitHub Profile Explorer',
+    search: 'Издөө',
+    loading: 'Жүктөлүүдө...',
+    retry: 'Кайра аракет кылуу',
+    error: 'Ката кетти',
+    empty: 'Эч нерсе табылган жок',
+    login: 'GitHub аркылуу кирүү',
+    logout: 'Чыгуу',
+    switchToDarkTheme: 'Караңгы темага өтүү',
+    switchToLightTheme: 'Жарык темага өтүү',
+    language: 'Тил',
+  },
+  users: {
+    searchPlaceholder: 'GitHub колдонуучуларын издөө…',
+    resultsCount: 'Табылган колдонуучулар: {count}',
+    noQuery: 'Издөө үчүн колдонуучу атын киргизиңиз',
+    tabPublic: 'Ачык',
+    tabPrivate: 'Жеке',
+    profileLink: 'GitHub профили',
+    emailLabel: 'Email',
+    companyLabel: 'Компания',
+    locationLabel: 'Жайгашкан жери',
+    bioLabel: 'Био',
+    edit: 'Түзөтүү',
+    save: 'Сактоо',
+    cancel: 'Жокко чыгаруу',
+    namePlaceholder: 'Аты',
+    bioPlaceholder: 'Био',
+    companyPlaceholder: 'Компания',
+    locationPlaceholder: 'Жайгашкан жери',
+    updateError: 'Профилди жаңыртуу ишке ашкан жок',
+  },
+}

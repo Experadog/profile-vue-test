@@ -1,0 +1,37 @@
+// Minimal common namespace only — real translations are added when
+// localization is implemented (Milestone: Localization).
+export default {
+  common: {
+    appName: 'GitHub Profile Explorer',
+    search: 'Поиск',
+    loading: 'Загрузка...',
+    retry: 'Повторить',
+    error: 'Что-то пошло не так',
+    empty: 'Ничего не найдено',
+    login: 'Войти через GitHub',
+    logout: 'Выйти',
+    switchToDarkTheme: 'Включить тёмную тему',
+    switchToLightTheme: 'Включить светлую тему',
+    language: 'Язык',
+  },
+  users: {
+    searchPlaceholder: 'Поиск пользователей GitHub…',
+    resultsCount: 'Найдено пользователей: {count}',
+    noQuery: 'Введите имя пользователя для поиска',
+    tabPublic: 'Публичные',
+    tabPrivate: 'Приватные',
+    profileLink: 'Профиль на GitHub',
+    emailLabel: 'Email',
+    companyLabel: 'Компания',
+    locationLabel: 'Локация',
+    bioLabel: 'О себе',
+    edit: 'Редактировать',
+    save: 'Сохранить',
+    cancel: 'Отмена',
+    namePlaceholder: 'Имя',
+    bioPlaceholder: 'О себе',
+    companyPlaceholder: 'Компания',
+    locationPlaceholder: 'Локация',
+    updateError: 'Не удалось обновить профиль',
+  },
+}

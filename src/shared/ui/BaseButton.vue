@@ -31,6 +31,11 @@ withDefaults(
   justify-content: center;
   gap: 0.5em;
   cursor: pointer;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  padding: 0.5em 1em;
 }
 
 .base-button:disabled {

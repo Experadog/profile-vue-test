@@ -1,12 +1,13 @@
 import { createI18n } from 'vue-i18n'
 
-// Locale messages are intentionally empty at this stage.
-// Translation content will be added when localization is implemented.
+import { DEFAULT_LOCALE } from '@/shared/constants/locales'
+import { getStoredLocale } from '@/shared/lib/locale-storage'
+
+import { messages } from '@/app/i18n'
+
 export const i18n = createI18n({
   legacy: false,
-  locale: 'en',
-  fallbackLocale: 'en',
-  messages: {
-    en: {},
-  },
+  locale: getStoredLocale() ?? DEFAULT_LOCALE,
+  fallbackLocale: DEFAULT_LOCALE,
+  messages,
 })
