@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import BaseButton from './BaseButton.vue'
+
 withDefaults(
   defineProps<{
     message?: string
@@ -18,13 +20,9 @@ const emit = defineEmits<{
 <template>
   <div class="base-error-state" role="alert">
     <p class="base-error-state__message">{{ message }}</p>
-    <button
-      type="button"
-      class="base-error-state__retry"
-      @click="emit('retry')"
-    >
+    <BaseButton type="button" variant="secondary" @click="emit('retry')">
       {{ retryLabel }}
-    </button>
+    </BaseButton>
   </div>
 </template>
 
@@ -33,11 +31,15 @@ const emit = defineEmits<{
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5em;
+  gap: 1em;
   text-align: center;
+  padding: 3em 1.5em;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
 }
 
-.base-error-state__retry {
-  cursor: pointer;
+.base-error-state__message {
+  color: var(--color-danger);
+  margin: 0;
 }
 </style>

@@ -72,5 +72,7 @@ function goToProfile(login: string): void {
   border: none;
   padding: 0;
   cursor: pointer;
+  color: inherit;
+  border-radius: var(--radius-md);
 }
 </style>

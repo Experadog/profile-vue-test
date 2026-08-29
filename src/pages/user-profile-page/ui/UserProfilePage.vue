@@ -8,6 +8,7 @@ import { ProfileHeader } from '@/widgets/profile-header'
 import { ProfileTabs } from '@/widgets/profile-tabs'
 import { RepoList } from '@/widgets/repo-list'
 import { BaseSpinner, BaseErrorState } from '@/shared/ui'
+import { ROUTE_NAMES } from '@/shared/config/routes-names'
 
 const route = useRoute()
 const { t } = useI18n()
@@ -39,6 +40,14 @@ watch(username, loadProfile)
 
 <template>
   <section class="user-profile-page">
+    <nav class="user-profile-page__breadcrumb" aria-label="breadcrumb">
+      <router-link :to="{ name: ROUTE_NAMES.users }" class="user-profile-page__breadcrumb-link">
+        {{ t('users.breadcrumbUsers') }}
+      </router-link>
+      <span class="user-profile-page__breadcrumb-sep" aria-hidden="true">/</span>
+      <span class="user-profile-page__breadcrumb-current">@{{ username }}</span>
+    </nav>
+
     <BaseSpinner v-if="userStore.userStatus === 'loading'" :label="t('common.loading')" />
 
     <BaseErrorState
@@ -65,5 +74,32 @@ watch(username, loadProfile)
   display: flex;
   flex-direction: column;
   gap: 1.5em;
+}
+
+.user-profile-page__breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 0.9em;
+  color: var(--color-text-muted);
+}
+
+.user-profile-page__breadcrumb-link {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.user-profile-page__breadcrumb-link:hover {
+  color: var(--color-accent);
+}
+
+.user-profile-page__breadcrumb-sep {
+  color: var(--color-border);
+}
+
+.user-profile-page__breadcrumb-current {
+  color: var(--color-text);
+  font-weight: 500;
 }
 </style>

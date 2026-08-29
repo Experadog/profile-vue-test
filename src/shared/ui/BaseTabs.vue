@@ -38,16 +38,26 @@ function selectTab(id: string): void {
 <style scoped>
 .base-tabs {
   display: flex;
-  gap: 0.5em;
+  gap: 1.5em;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .base-tabs__tab {
   cursor: pointer;
   border: none;
+  border-bottom: 2px solid transparent;
   background: none;
+  padding: 0.6em 0.1em;
+  margin-bottom: -1px;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  transition: color 0.15s ease;
 }
 
 .base-tabs__tab--active {
-  font-weight: bold;
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
 }
 </style>

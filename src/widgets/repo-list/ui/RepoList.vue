@@ -75,7 +75,7 @@ function retry(): void {
 .repo-list__items {
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 0.75em;
   list-style: none;
   padding: 0;
   margin: 0;

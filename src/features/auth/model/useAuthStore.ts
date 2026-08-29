@@ -18,7 +18,14 @@ export const useAuthStore = defineStore('auth', () => {
   const status = ref<AuthStatus>('idle')
   const error = ref<string | null>(null)
 
-  const isAuthenticated = computed(() => hasAccessToken() && userStore.currentUser !== null)
+  // Derived purely from `currentUser` (reactive) rather than also
+  // checking `hasAccessToken()` (a plain localStorage read, not tracked
+  // by Vue's reactivity — mixing it in here silently broke UI updates
+  // right after login until a manual refresh). Every action in this
+  // store that sets or clears the token also sets or clears `currentUser`
+  // in the same breath, so `currentUser` alone is a reliable, fully
+  // reactive proxy for "is there a valid session".
+  const isAuthenticated = computed(() => userStore.currentUser !== null)
 
   // Full-page redirect to GitHub's authorization screen. Nothing to await —
   // the browser navigates away.

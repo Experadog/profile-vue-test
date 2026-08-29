@@ -44,6 +44,11 @@ const { t } = useI18n()
   gap: 1.5em;
   align-items: flex-start;
   flex-wrap: wrap;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.75em;
+  box-shadow: var(--shadow-sm);
 }
 
 .profile-header__info {
@@ -53,7 +58,9 @@ const { t } = useI18n()
 }
 
 .profile-header__login {
-  font-weight: bold;
+  color: var(--color-text-muted);
+  font-size: 0.95em;
+  font-weight: 500;
   margin: 0;
 }
 
@@ -61,8 +68,23 @@ const { t } = useI18n()
   opacity: 0.7;
 }
 
-.profile-header__email,
-.profile-header__link {
+.profile-header__email {
+  color: var(--color-text-muted);
+  font-size: 0.9em;
   margin: 0;
+}
+
+.profile-header__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  padding: 0.3em 0.75em;
+  border-radius: var(--radius-full);
+  background: var(--color-accent-subtle);
+  color: var(--color-accent);
+  font-size: 0.85em;
+  font-weight: 500;
+  width: fit-content;
+  text-decoration: none;
 }
 </style>

@@ -27,8 +27,12 @@ const { isEditing, form, isSaving, saveError, startEditing, cancelEditing, save 
   <div class="edit-profile-fields">
     <template v-if="!isEditing">
       <h1 class="edit-profile-fields__name">{{ user.name ?? user.login }}</h1>
-      <p v-if="user.company" class="edit-profile-fields__meta">{{ user.company }}</p>
-      <p v-if="user.location" class="edit-profile-fields__meta">{{ user.location }}</p>
+
+      <div v-if="user.company || user.location" class="edit-profile-fields__tags">
+        <span v-if="user.company" class="edit-profile-fields__tag">{{ user.company }}</span>
+        <span v-if="user.location" class="edit-profile-fields__tag">{{ user.location }}</span>
+      </div>
+
       <p v-if="user.bio" class="edit-profile-fields__bio">{{ user.bio }}</p>
 
       <BaseButton v-if="editable" type="button" @click="startEditing">
@@ -72,7 +76,7 @@ const { isEditing, form, isSaving, saveError, startEditing, cancelEditing, save 
 
       <div class="edit-profile-fields__actions">
         <BaseButton type="submit" :loading="isSaving">{{ t('users.save') }}</BaseButton>
-        <BaseButton type="button" :disabled="isSaving" @click="cancelEditing">
+        <BaseButton type="button" variant="secondary" :disabled="isSaving" @click="cancelEditing">
           {{ t('users.cancel') }}
         </BaseButton>
       </div>
@@ -89,11 +93,25 @@ const { isEditing, form, isSaving, saveError, startEditing, cancelEditing, save 
 
 .edit-profile-fields__name {
   margin: 0;
+  font-size: 1.5em;
 }
 
-.edit-profile-fields__meta {
-  margin: 0;
-  opacity: 0.8;
+.edit-profile-fields__tags {
+  display: flex;
+  gap: 0.5em;
+  flex-wrap: wrap;
+}
+
+.edit-profile-fields__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  padding: 0.25em 0.65em;
+  border-radius: var(--radius-full);
+  background: var(--color-surface-hover);
+  color: var(--color-text-muted);
+  font-size: 0.85em;
+  width: fit-content;
 }
 
 .edit-profile-fields__bio {

@@ -21,10 +21,25 @@ Design (FSD)**.
   scope. Opening a profile always starts on the Public tab.
 - **Other users / search**: search GitHub users, see the first page of
   results and the total match count, click through to a user's profile
-  (opens on their public repositories).
+  (opens on their public repositories). Search is live-as-you-type
+  (debounced ~400ms), in addition to submitting via Enter or the Search
+  button.
 - **Light/dark theme**, persisted across reloads.
 - **Localization**: ky / ru (default) / en, switchable from the header and
   persisted across reloads.
+- A quick link back to your own profile (avatar + login) in the header
+  once logged in.
+- Breadcrumb navigation on the profile page ("Users / @login") linking
+  back to search.
+
+## Design
+
+The visual design uses a single accent color — a red, similar in spirit
+to common banking/fintech brand palettes — against neutral light/dark
+surfaces, the Inter typeface, and a card-based layout with soft shadows
+rather than hard borders. All colors, spacing, and radii are defined as
+CSS custom properties in `src/app/styles/global.css`, giving both themes
+a single source of truth.
 
 ## Stack
 

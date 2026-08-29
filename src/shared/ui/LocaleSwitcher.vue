@@ -18,28 +18,59 @@ function selectLocale(event: Event): void {
 </script>
 
 <template>
-  <select
-    class="locale-switcher"
-    :value="locale"
-    :aria-label="t('common.language')"
-    :title="t('common.language')"
-    @change="selectLocale"
-  >
-    <option v-for="code in SUPPORTED_LOCALES" :key="code" :value="code">
-      {{ code.toUpperCase() }}
-    </option>
-  </select>
+  <div class="locale-switcher">
+    <select
+      class="locale-switcher__control"
+      :value="locale"
+      :aria-label="t('common.language')"
+      :title="t('common.language')"
+      @change="selectLocale"
+    >
+      <option v-for="code in SUPPORTED_LOCALES" :key="code" :value="code">
+        {{ code.toUpperCase() }}
+      </option>
+    </select>
+  </div>
 </template>
 
 <style scoped>
 .locale-switcher {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.locale-switcher::after {
+  content: '';
+  position: absolute;
+  right: 0.75em;
+  top: 50%;
+  width: 0.4em;
+  height: 0.4em;
+  border-right: 1.5px solid var(--color-text-muted);
+  border-bottom: 1.5px solid var(--color-text-muted);
+  transform: translateY(-70%) rotate(45deg);
+  pointer-events: none;
+}
+
+.locale-switcher__control {
   height: 2.25em;
-  padding: 0 0.5em;
-  border-radius: 0.5em;
+  width: 100%;
   border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
   background: var(--color-surface);
   color: var(--color-text);
+  padding: 0.5em 1.75em 0.5em 0.75em;
+  font-size: inherit;
+  font-family: inherit;
   cursor: pointer;
-  font-size: 0.9rem;
+  appearance: none;
+  transition: all 0.15s ease;
+}
+
+.locale-switcher__control:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-subtle);
 }
 </style>

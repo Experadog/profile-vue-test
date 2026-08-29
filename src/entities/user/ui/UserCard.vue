@@ -25,6 +25,17 @@ defineProps<{
   display: flex;
   gap: 0.75em;
   align-items: center;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1em 1.25em;
+  transition: all 0.15s ease;
+}
+
+.user-card:hover {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
 }
 
 .user-card__info {
@@ -35,5 +46,23 @@ defineProps<{
 
 .user-card__login {
   font-weight: bold;
+  font-size: 1.05em;
+  color: var(--color-text);
+}
+
+.user-card__name {
+  color: var(--color-text-muted);
+  font-size: 0.9em;
+}
+
+.user-card__link {
+  color: var(--color-text-muted);
+  font-size: 0.85em;
+  text-decoration: none;
+}
+
+.user-card__link:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
 }
 </style>

@@ -41,4 +41,8 @@ function handleSubmit(): void {
   gap: 0.75em;
   flex-wrap: wrap;
 }
+
+.search-users-form > :first-child {
+  flex: 1;
+}
 </style>

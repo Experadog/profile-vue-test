@@ -51,6 +51,8 @@ const resolvedSrc = computed(() => {
   display: inline-block;
   border-radius: 50%;
   object-fit: cover;
+  border: 3px solid var(--color-surface);
+  box-shadow: 0 0 0 1px var(--color-border);
 }
 
 .user-avatar--fallback {
