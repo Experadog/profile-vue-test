@@ -119,7 +119,7 @@ npm install
    OAuth App**.
 2. **Application name**: anything, e.g. `GitHub Profile Explorer (local)`.
 3. **Homepage URL**: `http://localhost:5173`.
-4. **Authorization callback URL**: `http://localhost:5173/oauth/callback`.
+4. **Redirect URI**: `http://localhost:5173/oauth/callback`.
    The app computes its redirect URI automatically at runtime from
    whatever origin it's actually served from (see
    `shared/config/oauth.ts`) — it isn't configured via an env var. Register
